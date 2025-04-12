@@ -1,7 +1,11 @@
+# entrar no container do client
 docker exec -it ro-client bash
 
+# entrar no container do server
 docker exec -it rathena bash
 
+# listar redes
 docker network ls
 
+# inspecionar schema
 docker inspect brok_default

@@ -1,0 +1,38 @@
+## Planos de longa data
+1. quando tiver tudo estável
+2. eu vou subir um server na versão atual
+3. garantir backups dos bancos de dados pra gente não perder nada
+4. deixar o rag online nessa versão de 2013
+5. criar contas manuais para o clã na nossa alpha
+6. estudar todos os recursos do server e do client
+7. ir migrando aos poucos pra versões mais novas
+8. manter compatibilidade nas migrações com todos os players desde o dia 0
+
+* depois que isso estiver mais ou menos estável, a ideia é contribuir com as comunidades oficiais que nos sustentam em expandir o projeto pras versões mais novas do kRO
+
+## A experiência do rathena docker
+O projeto oficial já tem um exemplo de docker https://github.com/rathena/rathena/tree/master/tools/docker
+* Eles exigiram login no docker (apesar de eu achar que já tenho login)
+
+Suponho que eles restringiram a imagem - talvez?
+
+Preferi optar pelo caminho que já comecei...
+
+## wsproxy
+tive que remover -a rathena para funcionar imediatamente
+
+mas tem um `warning de segurança` pra deixar o proxy pra qualquer coisa...
+o certo era configurar ele como um túnel
+
+## packet obfuscation
+estamos usando um packetver bem antigo... 20131223
+
+após o wsproxy o charserver começou a conectar
+
+mas o packet obfuscation disse receber resposta invalida,
+lançou um warning de que e a feature está desconfigurada no roBrowser
+
+tentei desabilitar no server - mas isso fez o char server até aceitar a conexão
+mas ficar quieto após isso sem finalizar o  handshake
+
+a sugestão dada é atualizar pro roBrowserLegacy

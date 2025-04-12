@@ -40,7 +40,7 @@ COPY ./rathena-conf/ /opt/rathena/conf/
 # Compilar o emulador
 WORKDIR /opt/rathena
 
-RUN ./configure --enable-packetver=20131223 && make -j4 server
+RUN ./configure --enable-packetver=20211103 && make -j4 server
 
 # Porta padrão do emulador (modifique conforme necessário)
 EXPOSE 5121 6121 6900

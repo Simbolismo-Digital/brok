@@ -12,15 +12,21 @@ var ROConfig = {
 	development:    true,
 	version:     25,
 	langtype:    12,
-	packetver:   20131223,
+	packetver:   20211103,
 	servers: [{
 		display:     "[bROK] Sakray",
 		desc:        "Guardiões¨de¨Midgard",
 		address:     "rathena",
 		port:        6900,
+		version:     25,
+		langtype:    12,
+		packetver:   20211103,
+		forceUseAddress: false,
+		packetKeys:  true,
 		socketProxy: "ws://127.0.0.1:5999/",
-		// adminList:   [2000000]
+		adminList:   [2000000]
 	}],
+	packetDump:  false,
 	skipServerList:  true,
-	skipIntro:       false,
+	skipIntro:       false
 };

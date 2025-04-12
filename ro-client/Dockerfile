@@ -1,10 +1,10 @@
-# Stage 1: Clone roBrowser
+# Stage 1: Clone roBrowserLegacy
 FROM node:18-alpine as builder
 
 RUN apk add --no-cache git
 
-# Clona o roBrowser
-RUN git clone https://github.com/vthibault/roBrowser.git /tmp/roBrowser
+# Clona o roBrowserLegacy
+RUN git clone https://github.com/MrAntares/roBrowserLegacy.git /tmp/roBrowserLegacy
 
 # Também clona o wsProxy
 RUN git clone https://github.com/herenow/wsProxy.git /tmp/wsProxy && \
@@ -16,13 +16,13 @@ FROM nginx:alpine
 RUN apk add --no-cache nodejs npm bash
 
 LABEL maintainer="Davi A. Wasserberg <davi.abreu.w@gmail.com>"
-LABEL description="roBrowser + nginx + websocket proxy (wsProxy)"
+LABEL description="roBrowserLegacy + nginx + websocket proxy (wsProxy)"
 
 # Copy only need input
-COPY --from=builder /tmp/roBrowser/applications/window.html /usr/share/nginx/html/index.html
+COPY --from=builder /tmp/roBrowserLegacy/applications/window.html /usr/share/nginx/html/index.html
 
-# Copia o roBrowser
-COPY --from=builder /tmp/roBrowser /usr/share/nginx/html
+# Copia o roBrowserLegacy
+COPY --from=builder /tmp/roBrowserLegacy /usr/share/nginx/html
 
 # Copia o wsProxy
 COPY --from=builder /tmp/wsProxy /app/wsProxy

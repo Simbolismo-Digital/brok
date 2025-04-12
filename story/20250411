@@ -36,3 +36,10 @@ tentei desabilitar no server - mas isso fez o char server até aceitar a conexã
 mas ficar quieto após isso sem finalizar o  handshake
 
 a sugestão dada é atualizar pro roBrowserLegacy
+
+## roBrowser legacy
+
+recebi orientação da comunidade para packetver=20211103
+
+testei - ainda parece estranho na parte da renderização
+não sei se fiz toda configuração corretamente

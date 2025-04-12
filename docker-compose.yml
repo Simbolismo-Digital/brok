@@ -1,6 +1,8 @@
 services:
   rathena:
-    build: .
+    build:
+      context: ./rathena
+      dockerfile: Dockerfile
     container_name: rathena
     depends_on:
       - mariadb
@@ -14,7 +16,7 @@ services:
       - DB_PASS=ragnarok
       - DB_NAME=ragnarok
     volumes:
-      - ./rathena-conf:/opt/rathena/conf
+      - ./rathena/rathena-conf:/opt/rathena/conf
     command: >
       bash -c "
         echo Cleaning up stale PID files... &&
@@ -49,7 +51,7 @@ services:
 
     volumes:
       - db_data:/var/lib/mysql
-      - ./seeds:/docker-entrypoint-initdb.d
+      - ./rathena/seeds:/docker-entrypoint-initdb.d
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

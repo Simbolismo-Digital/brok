@@ -1,0 +1,13 @@
+Testar conexão com o server
+
+npm install -g wscat
+
+wscat -c 127.0.0.1:5999/$(ip route | grep default | awk '{print $3}'):6121
+
+wscat -c 127.0.0.1:5999/$(ip route | grep default | awk '{print $3}'):5121
+
+wscat -c 127.0.0.1:5999/rathena:5121
+
+wscat -c 127.0.0.1:5999/172.30.0.3:5121
+
+HOST_IP=$(ip route | grep default | awk '{print $3}')
